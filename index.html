@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GiftAI - The Perfect Gift Recommender</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <script type="module" crossorigin src="/assets/index-DPxvlKjZ.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-08nF3PE1.css">
+  </head>
+  <body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Smooth Loader -->
+    <div class="loader">
+      <div class="loader-text">
+        <span class="word">GiftAI.</span>
+        <span class="word">Curated.</span>
+        <span class="word">Perfect.</span>
+      </div>
+      <div class="loader-progress"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="app-container">
+      <nav class="navbar">
+        <div class="logo">GiftAI</div>
+        <ul class="nav-links">
+          <li><a href="#home" class="nav-link" data-hover="Home">Home</a></li>
+          <li><a href="#recommender" class="nav-link" data-hover="Features">Features</a></li>
+          <li><a href="#recommender" class="nav-btn primary-btn">Try It Now</a></li>
+        </ul>
+      </nav>
+
+      <main>
+        <!-- Hero Section with Parallax -->
+        <section class="hero" id="home">
+          <div class="hero-content">
+            <h1 class="hero-title">Find the <span class="gradient-text">Perfect Gift</span> with AI</h1>
+            <p class="hero-subtitle">Our intelligent algorithm analyzes personalities, interests, and occasions to curate the ultimate present.</p>
+            <div class="hero-cta-group">
+              <a href="#recommender" class="primary-btn pulse-btn">Start Recommender</a>
+            </div>
+          </div>
+          <div class="hero-visual parallax-bg">
+             <div class="glow-orb orb-1"></div>
+             <div class="glow-orb orb-2"></div>
+             <img src="/ai_gift_box.png" alt="Futuristic AI Gift" class="floating-gift" />
+          </div>
+        </section>
+
+        <!-- Recommender Section with Micro Interactions -->
+        <section class="recommender-section" id="recommender">
+           <div class="glass-panel">
+              <h2 class="section-title">Who are you buying for?</h2>
+              <div class="form-group">
+                <input type="text" id="recipientName" class="elegant-input" placeholder="e.g. My tech-savvy brother..." required>
+                <div class="input-border"></div>
+              </div>
+              <div class="tags-container">
+                 <span class="tag">Birthday</span>
+                 <span class="tag">Anniversary</span>
+                 <span class="tag">Graduation</span>
+                 <span class="tag">Just Because</span>
+              </div>
+              <button class="primary-btn full-width mt-4" id="generateBtn">
+                <span class="btn-text">Generate Ideas</span>
+                <div class="btn-glow"></div>
+              </button>
+           </div>
+           
+           <div class="results-container hidden" id="resultsArea">
+             <!-- Results cards injected here -->
+           </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
