@@ -4,6 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
+const BASE_URL = import.meta.env.BASE_URL;
 const ALLOWED_IMAGES = new Set([
   '/ai_gift_box.png',
   '/candle_mock.png',
@@ -18,6 +19,18 @@ const ALLOWED_IMAGES = new Set([
   '/smart_ring_mock.png',
   '/zen_garden.png',
 ]);
+
+function resolveAssetPath(path) {
+  if (typeof path !== 'string' || !path) {
+    return path;
+  }
+
+  if (/^(?:https?:)?\/\//.test(path) || path.startsWith('data:')) {
+    return path;
+  }
+
+  return `${BASE_URL}${path.replace(/^\//, '')}`;
+}
 
 const PLATFORM_NAMES = ['Amazon', 'Flipkart', 'Myntra', 'Meesho'];
 const RESULT_LABELS = ['Editor pick', 'Statement gift', 'Daily upgrade', 'Conversation starter', 'Quiet luxury', 'Smart utility'];
@@ -1287,7 +1300,7 @@ function renderResults(items, resultsArea, contextLabel, bindCursorTargets, bind
       return `
         <article class="result-card zoom-in-hover" data-index="${index}">
           <div class="result-card__media">
-            <img src="${item.img}" alt="${escapeHtml(item.title)}" class="card-img" />
+            <img src="${resolveAssetPath(item.img)}" alt="${escapeHtml(item.title)}" class="card-img" />
             <span class="result-chip">${escapeHtml(label)}</span>
           </div>
           <div class="result-card__body">
@@ -1424,7 +1437,7 @@ function setupModal() {
       return;
     }
 
-    modalImg.src = item.img;
+    modalImg.src = resolveAssetPath(item.img);
     modalTitle.textContent = item.title;
     modalDesc.textContent = item.desc;
 
