@@ -1,0 +1,550 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="GiftAI Atelier turns a rough prompt into premium, AI-guided gift directions with cinematic presentation and fast price comparisons." />
+  <title>GiftAI Atelier | AI Gift Concierge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <style id="hard-override">
+    @media (min-width: 900px) {
+    /* Force height decrease and visible attractive text on collection cards */
+    .collection-card {
+      height: 315px !important;
+      min-height: 315px !important;
+    }
+    .collection-card__image {
+      height: 315px !important;
+      object-fit: cover !important;
+    }
+    .collection-card__overlay {
+      z-index: 10 !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      transform: translateY(0) !important;
+      background: linear-gradient(180deg, transparent 0%, rgba(7, 20, 26, 0.95) 30%, rgba(0, 0, 0, 1) 100%) !important;
+      padding: 1.5rem !important;
+    }
+    .collection-card__title {
+      color: #fff !important;
+      margin-bottom: 0.5rem !important;
+      font-size: 1.6rem !important;
+    }
+    .collection-card__pill {
+      font-weight: 700 !important;
+      color: var(--primary) !important;
+      background: rgba(112, 214, 193, 0.1) !important;
+    }
+    .collection-card__text {
+      color: #cccccc !important;
+      font-size: 1.05rem !important;
+      margin: 0 !important;
+    }
+
+      .hero-visual, .hero-stage { min-height: 830px !important; height: 830px !important; }
+      .hero-stage { scale: 0.95 !important; transform-origin: center center !important; }
+      .hero-stage { transform: scale(0.95) !important; transform-origin: center center !important; }
+      .hero-copy { margin-top: -80px !important; }
+      .float-1 { top: 5% !important; right: 8% !important; left: auto !important; }
+      .float-2 { top: 5% !important; left: 8% !important; right: auto !important; }
+      .float-3 { bottom: 5% !important; right: 8% !important; left: auto !important; }
+      .float-4 { bottom: 5% !important; left: 8% !important; right: auto !important; }
+      
+      .floating-card {
+        transition: border-color 0.4s ease, box-shadow 0.4s ease, background 0.4s ease, filter 0.4s ease !important;
+        position: absolute !important;
+        width: 315px !important;
+        padding: 1rem !important;
+        box-sizing: border-box;
+      }
+      .floating-card__image {
+        height: 150px !important;
+        width: 100% !important;
+        object-fit: contain !important;
+      }
+    }
+  </style>
+  <script type="module" crossorigin src="/assets/index-B6-aRx8A.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-xqhmFzqR.css">
+</head>
+
+<body>
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+  <div class="page-noise" aria-hidden="true"></div>
+
+  <div class="loader">
+    <div class="loader-text">
+      <span class="word">Curated.</span>
+      <span class="word">Layered.</span>
+      <span class="word">Unforgettable.</span>
+    </div>
+    <div class="loader-progress"></div>
+  </div>
+
+  <div class="app-container">
+    <nav class="navbar">
+      <a href="#home" class="logo">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <span>GiftAI Atelier</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#recommender" class="nav-link">Studio</a></li>
+        <li><a href="#collections" class="nav-link">Collections</a></li>
+        <li><a href="#how-it-works" class="nav-link">Process</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li><a href="#recommender" class="nav-btn primary-btn">Generate Ideas</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-copy">
+          <p class="eyebrow">AI gift concierge for people with standards</p>
+          <h1 class="hero-title" id="heroHeading">Gift with taste,</h1>
+          <h1 class="hero-title hero-title--accent" id="typewriterHeading">
+            <span id="typewriterText" class="gradient-text"></span>
+          </h1>
+          <p class="hero-subtitle" id="heroAutoFade">Describe the person, the vibe, or the occasion. GiftAI turns a
+            rough brief into polished directions that feel premium, useful, and genuinely considered.</p>
+          <div class="hero-cta-group">
+            <a href="#recommender" class="primary-btn pulse-btn">Start Curating</a>
+            <a href="#collections" class="secondary-btn">See Moodboards</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-stage">
+            <div class="hero-stage__motion">
+              <div class="stage-grid" aria-hidden="true"></div>
+              <div class="stage-rays" aria-hidden="true"></div>
+              <div class="glow-orb orb-1"></div>
+              <div class="glow-orb orb-2"></div>
+              <div class="spotlight" aria-hidden="true"></div>
+              <div class="orbit orbit--outer" aria-hidden="true">
+                <span class="orbit-dot"></span>
+              </div>
+              <div class="orbit orbit--inner" aria-hidden="true">
+                <span class="orbit-dot"></span>
+              </div>
+
+              <div class="stage-badge">
+                <span class="stage-badge__dot" aria-hidden="true"></span>
+                Motion-led curation
+              </div>
+
+              <article class="floating-card float-1">
+                <img src="/smart_ring_mock.png" alt="Smart ring gift idea" class="floating-card__image" />
+                <p class="floating-card__eyebrow">Understated tech</p>
+                <h3 class="floating-card__title">Smart Ring</h3>
+              </article>
+
+              <article class="floating-card float-2">
+                <img src="/modern_coffee_mug.png" alt="Temperature control mug gift idea" class="floating-card__image" />
+                <p class="floating-card__eyebrow">Daily ritual</p>
+                <h3 class="floating-card__title">Heat Smart Mug</h3>
+              </article>
+
+              <article class="floating-card float-3">
+                <img src="/luxury_watch.png" alt="Watch gift idea" class="floating-card__image" />
+                <p class="floating-card__eyebrow">Statement piece</p>
+                <h3 class="floating-card__title">Modern Watch</h3>
+              </article>
+
+              <article class="floating-card float-4">
+                <img src="/desk_mat_mock.png" alt="Desk setup gift idea" class="floating-card__image" />
+                <p class="floating-card__eyebrow">Workspace lift</p>
+                <h3 class="floating-card__title">Desk Upgrade</h3>
+              </article>
+
+              <div class="scene">
+                <div class="cube-shadow" aria-hidden="true"></div>
+                <div class="cube">
+                  <div class="cube__face cube__face--front">Tailored Finds</div>
+                  <div class="cube__face cube__face--back">GiftAI Atelier</div>
+                  <div class="cube__face cube__face--right">Quiet Luxury</div>
+                  <div class="cube__face cube__face--left">Thoughtful Daily Use</div>
+                  <div class="cube__face cube__face--top">Milestone Worthy</div>
+                  <div class="cube__face cube__face--bottom">Easy to Buy</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="recommender-section" id="recommender">
+        <div class="glass-panel">
+          <div class="panel-copy">
+            <p class="section-kicker">Gift Concierge Studio</p>
+            <h2 class="section-title">Tell us who you are buying for.</h2>
+            <p class="panel-text">A good gift is part empathy, part restraint, part surprise. Start with the person,
+              then let the studio shape a shortlist that feels considered instead of generic.</p>
+
+            <div class="panel-points">
+              <article class="point-card">
+                <p class="point-card__title">Describe the person</p>
+                <p class="point-card__text">Interests, style, routines, inside jokes, anything useful.</p>
+              </article>
+              <article class="point-card">
+                <p class="point-card__title">Layer on the occasion</p>
+                <p class="point-card__text">Birthday, promotion, anniversary, housewarming, or just because.</p>
+              </article>
+              <article class="point-card">
+                <p class="point-card__title">Open the shortlist</p>
+                <p class="point-card__text">Review the concepts, compare prices, and follow shopping links.</p>
+              </article>
+            </div>
+          </div>
+
+          <div class="studio-card">
+            <div class="studio-card__header">
+              <div>
+                <p class="studio-card__eyebrow">Studio brief</p>
+                <h3 class="studio-card__title">Start with a few real signals.</h3>
+              </div>
+              <div class="studio-meter" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <label class="input-label" for="recipientName">Recipient profile</label>
+            <div class="form-group">
+              <input type="text" id="recipientName" class="elegant-input"
+                placeholder="e.g. My younger brother just got his first design job and loves clean gadgets" required>
+              <div class="input-border"></div>
+            </div>
+
+            <div class="prompt-suggestions">
+              <button type="button" class="prompt-chip"
+                data-prompt="My partner loves slow mornings, ceramics, and warm minimalist interiors.">Slow-living partner</button>
+              <button type="button" class="prompt-chip"
+                data-prompt="My best friend just got promoted, loves coffee, and has expensive taste but buys nothing for themselves.">Promotion win</button>
+              <button type="button" class="prompt-chip"
+                data-prompt="My younger brother is starting his first design job and likes clean gadgets, music, and cool desk setups.">Creative sibling</button>
+              <button type="button" class="prompt-chip"
+                data-prompt="My dad travels often, values practical quality, and likes things that feel premium without being flashy.">Frequent traveler</button>
+            </div>
+
+            <p class="micro-text">Try: newly promoted designer, coffee-obsessed founder, long-distance partner,
+              fitness minimalist</p>
+            <p class="tags-label">Occasion or mood</p>
+            <div class="tags-container">
+              <span class="tag">Birthday</span>
+              <span class="tag">Anniversary</span>
+              <span class="tag">Promotion</span>
+              <span class="tag">Housewarming</span>
+              <span class="tag">Just Because</span>
+              <span class="tag">Luxury</span>
+            </div>
+            <div class="studio-actions">
+              <button class="primary-btn full-width" id="generateBtn">
+                <span class="btn-text">Generate Gift Ideas</span>
+              </button>
+              <p class="studio-footnote">Uses live AI when a key is configured. Otherwise it falls back to a premium
+                mock shortlist so the experience still works.</p>
+            </div>
+          </div>
+
+          <div class="results-container hidden" id="resultsArea"></div>
+        </div>
+      </section>
+
+      <section class="collections-section" id="collections">
+        <div class="section-header">
+          <p class="section-kicker">Curated Directions</p>
+          <h2 class="section-title">Three gift moods, all designed to feel intentional.</h2>
+        </div>
+        <div class="collections-grid">
+          <article class="collection-card zoom-in-hover">
+            <img src="/minimal_desk.png" alt="Minimal desk setup gifts" class="collection-card__image" />
+            <div class="collection-card__overlay">
+              <span class="collection-card__pill">For calm operators</span>
+              <h3 class="collection-card__title">Desk Rituals</h3>
+              <p class="collection-card__text">Clean forms, tactile materials, and useful upgrades they will keep on
+                display.</p>
+            </div>
+          </article>
+          <article class="collection-card zoom-in-hover">
+            <img src="/elegant_perfume.png" alt="Elegant fragrance gifts" class="collection-card__image" />
+            <div class="collection-card__overlay">
+              <span class="collection-card__pill">For statement makers</span>
+              <h3 class="collection-card__title">Evening Energy</h3>
+              <p class="collection-card__text">Confident gifts with mood, polish, and a little drama in the best way.</p>
+            </div>
+          </article>
+          <article class="collection-card zoom-in-hover">
+            <img src="/zen_garden.png" alt="Calming home gifts" class="collection-card__image" />
+            <div class="collection-card__overlay">
+              <span class="collection-card__pill">For thoughtful reset</span>
+              <h3 class="collection-card__title">Quiet Luxury</h3>
+              <p class="collection-card__text">Soft-focus pieces that feel personal, grounding, and beautifully chosen.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section class="features-section" id="features">
+        <div class="section-header">
+          <p class="section-kicker">Why It Feels Better</p>
+          <h2 class="section-title">A faster path to gifts that still feel like you put in the work.</h2>
+        </div>
+        <div class="features-grid">
+          <article class="feature-card zoom-in-hover">
+            <div class="feature-icon glow-effect">Taste</div>
+            <h3 class="feature-title">Taste-first recommendations</h3>
+            <p class="feature-desc">The interface is built around mood, context, and usefulness instead of random bulk
+              suggestions.</p>
+          </article>
+          <article class="feature-card zoom-in-hover">
+            <div class="feature-icon glow-effect">Speed</div>
+            <h3 class="feature-title">Fast, but still polished</h3>
+            <p class="feature-desc">You get a shortlist in seconds, then open each idea with price comparisons and
+              direct store searches.</p>
+          </article>
+          <article class="feature-card zoom-in-hover">
+            <div class="feature-icon glow-effect">Context</div>
+            <h3 class="feature-title">Designed for real moments</h3>
+            <p class="feature-desc">Birthdays, anniversaries, promotions, thank-yous, or the people who are impossible
+              to buy for.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="how-it-works-section" id="how-it-works">
+        <div class="section-header">
+          <p class="section-kicker">How It Works</p>
+          <h2 class="section-title">A simple three-step flow, wrapped in a much better-looking experience.</h2>
+        </div>
+        <div class="timeline">
+          <div class="timeline-step zoom-in-hover">
+            <div class="step-number glow-effect">1</div>
+            <p class="step-caption">Input</p>
+            <h4 class="step-title">Build the brief</h4>
+            <p class="step-desc">Write who they are and add the occasion, style, or gift mood.</p>
+          </div>
+          <div class="timeline-step zoom-in-hover">
+            <div class="step-number glow-effect">2</div>
+            <p class="step-caption">Curate</p>
+            <h4 class="step-title">Generate directions</h4>
+            <p class="step-desc">GiftAI assembles a cleaner shortlist instead of flooding you with noise.</p>
+          </div>
+          <div class="timeline-step zoom-in-hover">
+            <div class="step-number glow-effect">3</div>
+            <p class="step-caption">Choose</p>
+            <h4 class="step-title">Open and compare</h4>
+            <p class="step-desc">Review pricing across stores, then jump straight to shopping links.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-section" id="contact">
+        <div class="contact-shell">
+          <div class="section-header section-header--left">
+            <p class="section-kicker">Contact</p>
+            <h2 class="section-title">Want to share feedback, suggest features, or plan a custom gifting flow?</h2>
+            <p class="panel-text">This opens an email draft with your details, so you can reach out without needing a backend form.</p>
+          </div>
+
+          <div class="contact-grid">
+            <form class="contact-form" id="contactForm">
+              <div class="contact-field-row">
+                <div class="contact-field">
+                  <label class="input-label" for="contactName">Your name</label>
+                  <input type="text" id="contactName" class="elegant-input" placeholder="e.g. Omkar" />
+                </div>
+                <div class="contact-field">
+                  <label class="input-label" for="contactEmail">Email</label>
+                  <input type="email" id="contactEmail" class="elegant-input" placeholder="e.g. you@example.com" />
+                </div>
+              </div>
+
+              <div class="contact-field">
+                <label class="input-label" for="contactSubject">Topic</label>
+                <input type="text" id="contactSubject" class="elegant-input" placeholder="Feature idea, feedback, partnership, custom flow..." />
+              </div>
+
+              <div class="contact-field">
+                <label class="input-label" for="contactMessage">Message</label>
+                <textarea id="contactMessage" class="elegant-input contact-textarea"
+                  placeholder="Tell us what you want to improve, build, or collaborate on." required></textarea>
+              </div>
+
+              <div class="contact-form__actions">
+                <button type="submit" class="primary-btn full-width">Send Feedback</button>
+                <p class="studio-footnote">This prepares a Gmail draft first, with a mail-app and copy fallback if
+                  needed.</p>
+                <p class="contact-status" id="contactStatus" aria-live="polite"></p>
+                <div class="contact-actions" id="contactActions" hidden>
+                  <a href="#" class="secondary-btn contact-action-btn" id="contactGmailDraft" target="_blank"
+                    rel="noopener noreferrer">Open Gmail Draft</a>
+                  <a href="#" class="secondary-btn contact-action-btn" id="contactMailApp">Open Mail App</a>
+                  <button type="button" class="secondary-btn contact-action-btn" id="contactCopyMessage">Copy Message</button>
+                </div>
+              </div>
+            </form>
+
+            <div class="contact-stage">
+              <div class="contact-stage__grid" aria-hidden="true"></div>
+              <div class="contact-ambient contact-ambient--warm" aria-hidden="true"></div>
+              <div class="contact-ambient contact-ambient--cool" aria-hidden="true"></div>
+              <svg class="contact-flow" viewBox="0 0 520 520" aria-hidden="true">
+                <defs>
+                  <linearGradient id="contactPathGradientOne" x1="170" y1="162" x2="342" y2="248" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#5df2de" stop-opacity="0.08" />
+                    <stop offset="45%" stop-color="#70d6c1" stop-opacity="1" />
+                    <stop offset="100%" stop-color="#f7c885" stop-opacity="1" />
+                  </linearGradient>
+                  <linearGradient id="contactPathGradientTwo" x1="342" y1="248" x2="428" y2="320" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#f7c885" stop-opacity="1" />
+                    <stop offset="60%" stop-color="#ff9a61" stop-opacity="1" />
+                    <stop offset="100%" stop-color="#ff9b56" stop-opacity="0.08" />
+                  </linearGradient>
+                  <linearGradient id="contactPathGradientThree" x1="342" y1="248" x2="228" y2="384" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#70d6c1" stop-opacity="1" />
+                    <stop offset="58%" stop-color="#9ce3d6" stop-opacity="1" />
+                    <stop offset="100%" stop-color="#5df2de" stop-opacity="0.08" />
+                  </linearGradient>
+                  <radialGradient id="contactHubGlow" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#f7c885" stop-opacity="0.56" />
+                    <stop offset="45%" stop-color="#ff9a61" stop-opacity="0.24" />
+                    <stop offset="100%" stop-color="#ff9a61" stop-opacity="0" />
+                  </radialGradient>
+                  <radialGradient id="contactHubCore" cx="40%" cy="34%" r="62%">
+                    <stop offset="0%" stop-color="#f7f1e8" stop-opacity="0.94" />
+                    <stop offset="26%" stop-color="#f7c885" stop-opacity="0.92" />
+                    <stop offset="100%" stop-color="#ff9a61" stop-opacity="0.12" />
+                  </radialGradient>
+                </defs>
+
+                <circle class="contact-flow__halo contact-flow__halo--outer" cx="342" cy="248" r="126"></circle>
+                <circle class="contact-flow__halo contact-flow__halo--inner" cx="342" cy="248" r="88"></circle>
+
+                <path class="contact-flow__path contact-flow__path--one" d="M176 170 C 226 184 282 208 342 248"></path>
+                <path class="contact-flow__path contact-flow__path--two" d="M342 248 C 390 258 418 286 428 320"></path>
+                <path class="contact-flow__path contact-flow__path--three" d="M342 248 C 320 308 278 352 228 384"></path>
+
+                <path class="contact-flow__trace contact-flow__trace--one" d="M176 170 C 226 184 282 208 342 248"></path>
+                <path class="contact-flow__trace contact-flow__trace--two" d="M342 248 C 390 258 418 286 428 320"></path>
+                <path class="contact-flow__trace contact-flow__trace--three" d="M342 248 C 320 308 278 352 228 384"></path>
+
+                <circle class="contact-flow__node contact-flow__node--one" cx="176" cy="170" r="8"></circle>
+                <circle class="contact-flow__node contact-flow__node--two" cx="428" cy="320" r="8"></circle>
+                <circle class="contact-flow__node contact-flow__node--three" cx="228" cy="384" r="8"></circle>
+
+                <circle class="contact-flow__spark contact-flow__spark--one" cx="262" cy="176" r="4"></circle>
+                <circle class="contact-flow__spark contact-flow__spark--two" cx="402" cy="212" r="3"></circle>
+                <circle class="contact-flow__spark contact-flow__spark--three" cx="286" cy="346" r="3.5"></circle>
+
+                <g class="contact-flow__hub">
+                  <circle class="contact-flow__hub-glow" cx="342" cy="248" r="60"></circle>
+                  <circle class="contact-flow__hub-ring contact-flow__hub-ring--outer" cx="342" cy="248" r="54"></circle>
+                  <circle class="contact-flow__hub-ring contact-flow__hub-ring--inner" cx="342" cy="248" r="34"></circle>
+                  <path class="contact-flow__hub-prism" d="M342 200 L384 248 L342 296 L300 248 Z"></path>
+                  <path class="contact-flow__hub-facet" d="M342 214 L369 248 L342 282 L315 248 Z"></path>
+                  <circle class="contact-flow__hub-core" cx="342" cy="248" r="11"></circle>
+                </g>
+
+                <circle class="contact-flow__pulse contact-flow__pulse--one" cx="176" cy="170" r="5"></circle>
+                <circle class="contact-flow__pulse contact-flow__pulse--two" cx="342" cy="248" r="5"></circle>
+                <circle class="contact-flow__pulse contact-flow__pulse--three" cx="342" cy="248" r="5"></circle>
+              </svg>
+
+              <article class="contact-stack-card contact-stack-card--primary">
+                <p class="contact-stack-card__label">Feedback lane</p>
+                <h3 class="contact-stack-card__title">Tell us what should get sharper next.</h3>
+                <p class="contact-stack-card__text">UI feedback, feature requests, and gifting workflow ideas are all welcome.</p>
+              </article>
+
+              <article class="contact-stack-card contact-stack-card--secondary">
+                <p class="contact-stack-card__label">Direct line</p>
+                <a href="mailto:hello@giftaiatelier.com" class="contact-method">
+                  <span class="contact-method__title">hello@giftaiatelier.com</span>
+                  <span class="contact-method__meta">Email the atelier</span>
+                </a>
+              </article>
+
+              <article class="contact-stack-card contact-stack-card--tertiary">
+                <p class="contact-stack-card__label">Quick path</p>
+                <a href="#recommender" class="contact-method">
+                  <span class="contact-method__title">Return to Studio</span>
+                  <span class="contact-method__meta">Generate another shortlist</span>
+                </a>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <div class="footer-shell">
+        <div class="footer-content">
+          <a href="#home" class="logo">
+            <span class="logo-mark" aria-hidden="true"></span>
+            <span>GiftAI Atelier</span>
+          </a>
+          <p class="footer-copy">Cinematic presentation meets AI-backed gift direction for people who want the result
+            to feel thoughtful, not automated.</p>
+          <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#recommender">Studio</a>
+            <a href="#collections">Collections</a>
+            <a href="#how-it-works">Process</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+        <div class="footer-cta-card">
+          <p class="footer-cta-card__kicker">Say hello</p>
+          <h3>Have feedback or want a custom gifting experience?</h3>
+          <a href="#contact" class="primary-btn">Open Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 GiftAI. Designed for better gifting decisions.</p>
+      </div>
+    </footer>
+  </div>
+
+  <div class="modal-overlay hidden" id="productModal">
+    <div class="modal-content">
+      <button class="modal-close" id="closeModal" aria-label="Close details view">&times;</button>
+      <div class="modal-body">
+        <div class="modal-left">
+          <div class="img-wrapper">
+            <img src="" alt="Product image" id="modalImg" class="modal-main-img" />
+          </div>
+          <div class="platforms">
+            <a href="#" class="platform-btn amazon">Buy on Amazon</a>
+            <a href="#" class="platform-btn flipkart">Buy on Flipkart</a>
+            <a href="#" class="platform-btn myntra">Buy on Myntra</a>
+            <a href="#" class="platform-btn meesho">Buy on Meesho</a>
+          </div>
+        </div>
+        <div class="modal-right">
+          <h2 id="modalTitle" class="modal-title">Product Title</h2>
+          <p id="modalDesc" class="modal-desc">Description goes here.</p>
+
+          <div class="price-graph-container">
+            <h3>Price map across platforms</h3>
+            <div class="graph" id="priceGraph"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

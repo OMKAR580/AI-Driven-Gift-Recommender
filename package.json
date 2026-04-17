@@ -1,0 +1,22 @@
+{
+  "name": "ai-driven-gift-recommender",
+  "version": "0.0.0",
+  "description": "GiftAI pairs a cinematic landing page with AI-powered gift recommendations.",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "scripts": {
+    "dev": "vite --configLoader native",
+    "build": "vite build --configLoader native",
+    "preview": "vite preview --configLoader native",
+    "start": "vite preview --configLoader native"
+  },
+  "devDependencies": {
+    "vite": "^8.0.4"
+  },
+  "dependencies": {
+    "gsap": "^3.14.2"
+  }
+}
