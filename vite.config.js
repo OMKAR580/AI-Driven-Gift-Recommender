@@ -1,6 +1,5 @@
 import { defineConfig, loadEnv } from 'vite';
 
-const repoName = 'AI-Driven-Gift-Recommender';
 const DEFAULT_API_PORT = 8787;
 
 export default defineConfig(({ command, mode }) => {
@@ -11,7 +10,7 @@ export default defineConfig(({ command, mode }) => {
     : DEFAULT_API_PORT;
 
   return {
-    base: command === 'build' ? `/${repoName}/` : '/',
+    base: '/',
     cacheDir: command === 'serve' ? `.vite-dev-cache-${Date.now()}` : '.vite-build-cache',
     build: {
       outDir: 'dist',
