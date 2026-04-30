@@ -103,5 +103,3 @@ Use `.env` (not committed):
 ![alt text](image-3.png)
 ![alt text](image-4.png)
 ![alt text](image-5.png)
-![Recommendations](./screenshots/recommendations.png)
-![Product Modal](./screenshots/modal.png)
