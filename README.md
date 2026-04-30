@@ -41,10 +41,15 @@ If Groq fails, Gemini is attempted automatically. If both fail, curated fallback
 
 ## Screenshots
 
-![Home](./screenshots/home.png)
+1-Home
 ![alt text](<Screenshot 2026-04-30 074529.png>)
-![Recommendations](./screenshots/recommendations.png)
-![Product Modal](./screenshots/modal.png)
+2-Recommendations
+![alt text](<Screenshot 2026-04-30 074759.png>)
+3-Product Modal
+![alt text](<Screenshot 2026-04-30 074705.png>)
+![alt text](<Screenshot 2026-04-30 074730.png>)
+![alt text](<Screenshot 2026-04-30 074842.png>)
+![alt text](<Screenshot 2026-04-30 074904.png>)
 
 ## Local Setup
 
