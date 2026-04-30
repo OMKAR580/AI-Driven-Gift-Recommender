@@ -42,6 +42,7 @@ If Groq fails, Gemini is attempted automatically. If both fail, curated fallback
 ## Screenshots
 
 ![Home](./screenshots/home.png)
+![alt text](<Screenshot 2026-04-30 074529.png>)
 ![Recommendations](./screenshots/recommendations.png)
 ![Product Modal](./screenshots/modal.png)
 
