@@ -2,12 +2,14 @@ node_modules/
 dist/
 .env
 *.log
-phase*-check*
-audit-*
 .vite-cache/
 .vite-dev-cache-*/
-build*/
+build-verify-*/
 release*/
+scratch_test.cjs
+phase*-check*
+audit-*
+build*/
 deploy-live/
 
 # Keep template env
