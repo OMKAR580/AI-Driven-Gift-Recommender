@@ -1,28 +1,19 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
-
-node_modules
-dist
-build
-dist-ssr
-*.local
+node_modules/
+dist/
 .env
-.env.*
+*.log
+phase*-check*
+audit-*
+.vite-cache/
+.vite-dev-cache-*/
+build*/
+release*/
+deploy-live/
+
+# Keep template env
 !.env.example
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
+# OS/editor
 .DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+.vscode/
+.idea/
